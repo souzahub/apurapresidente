@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apuração presidencial 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-main">
+        <h1 class="page-title">Apuração presidencial 2026</h1>
+        <p class="page-subtitle">Acompanhamento nacional em tempo real</p>
+      </div>
+      <div class="header-actions">
+        <span id="statusMessage" class="status-indicator">Atualizado</span>
+        <button id="btnRefresh" class="button-action" type="button">Atualizar agora</button>
+      </div>
+    </header>
+
+    <div class="round-toggle-group" role="tablist" aria-label="Seleção de turno">
+      <button id="btnRound2" class="toggle-button active" type="button" role="tab" aria-selected="true">2º turno (ao vivo)</button>
+      <button id="btnRound1" class="toggle-button" type="button" role="tab" aria-selected="false">1º turno (resultado final)</button>
+    </div>
+
+    <section class="progress-section">
+      <div class="progress-header">
+        <div class="progress-title-wrap">
+          <div class="progress-col">
+            <span class="label">Apuradas</span>
+            <span id="totalSectionsPercent" class="progress-value">0,00%</span>
+          </div>
+          <div class="progress-col">
+            <span class="label">Faltando</span>
+            <span id="remainingSectionsPercent" class="progress-subvalue">100,00%</span>
+          </div>
+        </div>
+        <span id="lastUpdateText" class="meta-info">Última atualização: --:--:--</span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div id="progressBar" class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div class="summary-metrics">
+        <div class="metric-item">
+          <span class="metric-label">Situação da contagem</span>
+          <span id="tseStatusText" class="metric-value">Em andamento</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Urnas apuradas</span>
+          <span id="sectionsCountText" class="metric-value">-</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Urnas restantes</span>
+          <span id="remainingCountText" class="metric-value">-</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Total de votos válidos</span>
+          <span id="validVotesText" class="metric-value">-</span>
+        </div>
+      </div>
+    </section>
+
+    <div id="noticeBox" class="notice-box hidden">
+      <span id="noticeText" class="notice-text"></span>
+    </div>
+
+    <section class="candidates-section">
+      <div class="section-heading">
+        <h2 class="section-title">Votação dos candidatos</h2>
+        <span id="totalCandidatesCount" class="candidates-count">0 candidatos</span>
+      </div>
+      <div id="candidatesList" class="candidates-list">
+        <div class="skeleton-card">
+          <div class="skeleton-header">
+            <div class="skeleton-line skeleton-title"></div>
+            <div class="skeleton-line skeleton-stat"></div>
+          </div>
+          <div class="skeleton-line skeleton-bar"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-header">
+            <div class="skeleton-line skeleton-title"></div>
+            <div class="skeleton-line skeleton-stat"></div>
+          </div>
+          <div class="skeleton-line skeleton-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <details class="settings-panel">
+      <summary class="settings-summary">Ajustes da apuração</summary>
+      <div class="settings-content">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="selectSourceMode" class="form-label">Origem dos dados</label>
+            <select id="selectSourceMode" class="form-select">
+              <option value="auto" selected>Dados oficiais ao vivo</option>
+              <option value="demo">Modo de teste (simulação)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="selectRefreshInterval" class="form-label">Tempo de atualização</label>
+            <select id="selectRefreshInterval" class="form-select">
+              <option value="30000" selected>A cada 30 segundos</option>
+              <option value="60000">A cada 1 minuto</option>
+              <option value="0">Apenas manual</option>
+            </select>
+          </div>
+        </div>
+        <div class="settings-actions">
+          <button id="btnApplySettings" class="button-secondary" type="button">Salvar ajustes</button>
+          <button id="btnResetEndpoint" class="button-text" type="button">Voltar ao padrão</button>
+        </div>
+      </div>
+    </details>
+
+    <footer class="footer">
+      <p class="footer-credit">Desenvolvido por Luan Souza de Siqueira - 2026</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
