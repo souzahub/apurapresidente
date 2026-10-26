@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen atelier | arquitetura editorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FAFAFA;
+            --color-bg-secondary: #FFFFFF;
+            --color-text-primary: #1A1A1A;
+            --color-text-secondary: #595959;
+            --color-accent: #2C3E50;
+            --color-accent-light: #34495E;
+            --color-border: #E5E5E5;
+            --font-main: 'Inter', sans-serif;
+            --font-serif: 'Merriweather', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+            color: var(--color-text-primary);
+            font-weight: 700;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--color-bg-secondary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .logo {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--color-accent);
+            letter-spacing: 0.5px;
+        }
+
+        .header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .header nav ul li a {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .header nav ul li a:hover {
+            color: var(--color-accent);
+        }
+
+        .hero {
+            padding: 100px 5%;
+            text-align: center;
+            background: var(--color-bg);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1em;
+            color: var(--color-text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent-light);
+        }
+
+        .services {
+            padding: 80px 5%;
+            background: var(--color-bg-secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--color-text-secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--color-bg);
+            padding: 30px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: var(--color-accent);
+        }
+
+        .service-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.95em;
+        }
+
+        .about {
+            padding: 80px 5%;
+            background: var(--color-bg-secondary);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: var(--color-text-secondary);
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .footer {
+            padding: 40px 5%;
+            background: var(--color-accent);
+            color: white;
+            text-align: center;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .header nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Lumen</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Arquitetura editorial<br>para empresas modernas</h1>
+            <p class="subtitle">Criamos interfaces limpas, funcionais e focadas na experiência do usuário.</p>
+            <a href="#contact" class="btn-primary">Fale conosco</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Nossos serviços</h2>
+            <p>Soluções completas para sua presença digital</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>UI/UX design</h3>
+                <p>Interfaces intuitivas e visualmente coesas, desenvolvidas com foco em usabilidade e acessibilidade.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Desenvolvimento web</h3>
+                <p>Código limpo, performático e escalável, utilizando as tecnologias mais modernas do mercado.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Consultoria</h3>
+                <p>Análise estratégica para otimizar sua jornada digital e maximizar o retorno do investimento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Sobre o Lumen</h2>
+            <p>Somos uma agência especializada em transformar conceitos em experiências digitais excepcionais. Com foco em minimalismo e funcionalidade, ajudamos empresas a comunicar suas mensagens com clareza e impacto.</p>
+            <p>Nossa abordagem combina design profissional com desenvolvimento robusto, garantindo que cada projeto seja tanto esteticamente agradável quanto tecnicamente sólido.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact" style="padding: 80px 5%; background: var(--color-bg-secondary);">
+        <div class="section-title">
+            <h2>Entre em contato</h2>
+            <p>Estamos prontos para iniciar seu próximo projeto</p>
+        </div>
+        
+        <div style="max-width: 500px; margin: 0 auto; text-align: center;">
+            <p style="color: var(--color-text-secondary); margin-bottom: 20px;">
+                Email: contato@lumen-atelier.com<br>
+                Telefone: (11) 99999-9999
+            </p>
+            <a href="mailto:contato@lumen-atelier.com" class="btn-primary">Enviar email</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Lumen atelier. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
