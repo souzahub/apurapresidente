@@ -1,2 +1,3 @@
 # apurapresidente
-# Apuração 2026 Presidencia
+
+Painel de apuração das eleições presidenciais de 2026.
